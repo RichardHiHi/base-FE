@@ -1,3 +1,4 @@
+import ChangeDefaultPassword from '@/pages/changeDefaultPassword';
 import ChangePassWordPage from '@/pages/ChangePassWordPage';
 import FirstLoginPage from '@/pages/FirstLoginPage';
 import LoginPage from '@/pages/LoginPage';
@@ -17,6 +18,7 @@ export const PAGE_ROUTES = {
   SIGN_IN: '/sign-in',
   PROFILE: '/profile',
   CHANGE_PASSWORD: '/change-password',
+  CHANGE_DEFAULT_PASSWORD: '/change-default-password',
   USER_LIST: '/users',
   EDIT_USER: `/${COMMON_PAGE.EDIT_USER}/:id`,
   FIRST_LOGIN: '/first-login',
@@ -46,6 +48,11 @@ export const privateRouters = [
   {
     path: PAGE_ROUTES.CHANGE_PASSWORD,
     element: <ChangePassWordPage />,
+    roleBan: [],
+  },
+  {
+    path: PAGE_ROUTES.CHANGE_DEFAULT_PASSWORD,
+    element: <ChangeDefaultPassword />,
     roleBan: [],
   },
   {

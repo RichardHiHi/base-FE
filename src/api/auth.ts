@@ -1,4 +1,4 @@
-import { AUTH } from '../constants/endpoints';
+import { AUTH, SETTINGS } from '../constants/endpoints';
 import api from '../lib/axios';
 import { ROLE } from './../routers/routes';
 
@@ -86,6 +86,17 @@ export const getMe = async (): Promise<getMeResponse> => {
 
 export const resetPassWord = async (id: string): Promise<getMeResponse> => {
   const { data } = await api.get(AUTH.RESET_PASSWORD + '/' + id);
+  return data;
+};
+
+//////////////////////////////////////
+
+export const changeDefaultPassWord = async (
+  passWord: string
+): Promise<getMeResponse> => {
+  const { data } = await api.post(SETTINGS.CHANGE_DEFAULT_PASSWORD, {
+    passWord,
+  });
   return data;
 };
 

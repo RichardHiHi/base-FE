@@ -41,7 +41,7 @@ const NavBar = () => {
 
   const handleLogout = () => {
     logout.mutate(undefined, {
-      onSuccess: () => {
+      onSettled: () => {
         removeAuth();
         navigate(ACCESS_PAGE_ROUTES.LOGIN);
       },

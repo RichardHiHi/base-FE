@@ -88,7 +88,12 @@ instance.interceptors.response.use(
         });
       });
     }
-    toast.error((error.response?.data as { error?: string })?.error);
+    if (
+      error.response?.status !== STATUS.BAD_REQUEST &&
+      error.response?.status !== STATUS.UNAUTHORIZED
+    ) {
+      toast.error((error.response?.data as { error?: string })?.error);
+    }
 
     return Promise.reject(error);
   }

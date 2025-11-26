@@ -16,3 +16,7 @@ export const AUTH = {
   UPDATE_PROFILE: 'auth/update-profile',
   RESET_PASSWORD: 'auth/reset-password',
 };
+
+export const SETTINGS = {
+  CHANGE_DEFAULT_PASSWORD: 'settings/change-default-password',
+};

@@ -8,9 +8,9 @@ import { Form } from '@/components/ui/form';
 import { Button } from '@/components/ui/button';
 import FormFieldInput from '@/components/common/hookForm/FormFieldInput';
 import { useLogin } from '@/queries/auth';
-import { LOCAL_STORAGE, saveToLocalStorage } from '@/lib/utils';
 import { ACCESS_PAGE_ROUTES } from '@/routers/routes';
 import { setAuth } from '@/lib/common';
+
 const formSchema = z.object({
   phone: z.string().min(2, {
     message: 'Số điện Thoại phải có ít nhất 11 ký tự.',
@@ -25,6 +25,7 @@ const LoginPage = () => {
   const PhoneFromSignUp = location.state?.phone;
   const navigate = useNavigate();
   const login = useLogin();
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {

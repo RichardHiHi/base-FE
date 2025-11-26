@@ -18,7 +18,6 @@ import {
 import { RATE, ROLE } from '@/lib/utils';
 import { useQueryClient } from '@tanstack/react-query';
 import type { newUserBody, updateAdminBody } from '@/api/user';
-import { toast } from 'sonner';
 import { GET_ME_QUERY_KEY, useResetPassWord } from '@/queries/auth';
 
 const PAY_RATE_TYPE = {

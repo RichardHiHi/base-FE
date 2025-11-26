@@ -9,8 +9,7 @@ import {
 } from '@/queries/users';
 import { useQueryClient } from '@tanstack/react-query';
 import { useEffect, useState } from 'react';
-import { PlusCircle } from 'lucide-react';
-import { toast } from 'sonner';
+import { KeyRound, PlusCircle } from 'lucide-react';
 import { RATE, ROLE } from '@/lib/utils';
 
 interface User {
@@ -24,7 +23,7 @@ interface User {
   rate: string;
 }
 import { useNavigate } from 'react-router-dom';
-import { ACCESS_PAGE_ROUTES } from '@/routers/routes';
+import { ACCESS_PAGE_ROUTES, PAGE_ROUTES } from '@/routers/routes';
 
 const UserListPage = () => {
   const { data, isSuccess } = UseUserList();
@@ -126,7 +125,14 @@ const UserListPage = () => {
       <h1 className='text-3xl font-semibold mb-6 text-center'>
         Danh sách người dùng
       </h1>
-      <div className='flex justify-end mb-4'>
+      <div className='flex justify-end mb-4 gap-2'>
+        <Button
+          variant='outline'
+          onClick={() => navigate(PAGE_ROUTES.CHANGE_DEFAULT_PASSWORD)}
+        >
+          <KeyRound className='mr-1 h-4 w-4' />
+          Đổi mật khẩu mặc định
+        </Button>
         <Button
           variant='outline'
           onClick={() => navigate(ACCESS_PAGE_ROUTES.EDIT_USER('new'))}

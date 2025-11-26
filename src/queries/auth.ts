@@ -1,4 +1,5 @@
 import {
+  changeDefaultPassWord,
   changePassWord,
   getMe,
   login,
@@ -47,6 +48,11 @@ export const useGetMe = () =>
 export const useResetPassWord = () =>
   useMutation({
     mutationFn: (id: string) => resetPassWord(id),
+  });
+
+export const useChangeDefaultPassWord = () =>
+  useMutation({
+    mutationFn: (passWord: string) => changeDefaultPassWord(passWord),
   });
 
 export const UseChangePassWord = () => {
